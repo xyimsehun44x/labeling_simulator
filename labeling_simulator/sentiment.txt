@@ -1,0 +1,53 @@
+{
+  “positive”: [
+    “good”,
+    “great”,
+    “excellent”,
+    “amazing”,
+    “love”,
+    “like”,
+    “happy”,
+    “satisfied”,
+    “recommend”,
+    “awesome”,
+    "fantastic",
+    "superb", 
+    "stellar", 
+    "flawless",
+    "solid",
+    "incredible", 
+    "brilliant", 
+    "phenomenal",
+    "upgrade",
+    "masterpiece"
+
+  ],
+  “negative”: [
+    “bad”,
+    “terrible”,
+    “awful”,
+    “hate”,
+    “dislike”,
+    “sad”,
+    “angry”,
+    “disappointed”,
+    “problem”,
+    “issue”
+    "horrible", 
+    "atrocious",
+    "garbage", 
+    "useless", 
+    "annoying", 
+    "frustrating", 
+    "mediocre", 
+    "underwhelming", 
+    "unacceptable",
+    "regret", 
+    "return", 
+    "refund", 
+    "avoid",
+    "scam", 
+    "waste", 
+    "failure"
+  ]
+}
