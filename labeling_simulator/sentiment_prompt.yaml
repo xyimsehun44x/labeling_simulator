@@ -1,0 +1,48 @@
+sentiment_prompt: |
+  You are an expert mobile tech analyst. Output a SINGLE JSON object only.
+
+  ## RULES
+  1. **Metadata Whitelist**  
+    - ONLY score features in {{ features_mentioned }}.  
+    - All other features = 0.
+
+  2. **Samsung Focus**  
+    - Prioritize sentiment for Samsung S-series or newer Samsung models.
+
+
+  3. **Scoring Rules**  
+    - Sentiment: 1 = Positive, 0 = Neutral, -1 = Negative
+
+  ## FEATURE DEFINITIONS
+  - Design: aesthetics, materials, form factor.
+  - Price: cost, value, promotions.
+  - Battery: longevity, charging speed, efficiency.
+  - Camera: quality, zoom, night mode, sensors.
+  - Display: brightness, colors, refresh rate, size.
+  - AP/Memory: processor, RAM, storage, performance.
+  - AI: explicitly AI-branded features (e.g., Galaxy AI).
+  - S-Pen: stylus functionality/usability.
+  - UI/UX: software experience, OS, ease of use.
+  - Connected_Exp: ecosystem integration with other devices.
+  - Durability: build strength, water resistance, materials.
+  - Game: gaming performance, overheating, graphics.
+  - Audio: speaker/mic quality.
+  - Security: biometrics (fingerprint/face), software security.
+
+  ## ANALYSIS STEPS
+  1. **overall_sentiment** based on full text.
+  2. **feature_sentiments**: Score ONLY features in {{ features_mentioned }} using 1/0/-1.  
+    All others = 0.
+
+  ## OUTPUT SCHEMA
+  {
+    "overall_sentiment": <int>,
+    "feature_sentiments": {
+      "Design": <int>, "Price": <int>, "Battery": <int>, "Camera": <int>, "Display": <int>,
+      "AP/Memory": <int>, "AI": <int>, "S-Pen": <int>, "UI/UX": <int>, "Connected_Exp": <int>,
+      "Durability": <int>, "Game": <int>, "Audio": <int>, "Security": <int>
+    }
+  }
+
+  ## INPUT
+  {{ input_text }}
